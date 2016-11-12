@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.dao.FlinkDao">   
+    <insert id="insertFlink" parameterType="Flink" useGeneratedKeys="true" keyProperty="id">
+        insert into flink(name,url,flink_desc) values(#{name},#{url},#{flinkDesc})
+    </insert>
+    
+    <select id="queryOneFlink" resultType="Flink" parameterType="int">
+        select id,name,url,flink_desc flinkDesc from flink where id=#{id}
+    </select>
+    
+    <select id="queryFlinkList" resultType="Flink">
+        select * from flink
+    </select>
+    
+    <delete id="deleteFlink" parameterType="int">
+       delete from flink where id=#{id}
+    </delete>
+    
+    <update id="updateFlink" parameterType="Flink">
+       update flink set name=#{name},url=#{url},flink_desc=#{flinkDesc} where id=#{id}
+    </update>
+</mapper>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration 
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 命名空间 -->
+	<typeAliases>
+		<typeAlias alias="Category" type="com.demo.model.Category" />
+		<typeAlias alias="FileModel" type="com.demo.model.FileModel" />
+		<typeAlias alias="Notice" type="com.demo.model.Notice" />
+		<typeAlias alias="Comment" type="com.demo.model.Comment" />
+		<typeAlias alias="User" type="com.demo.model.User" />
+		<typeAlias alias="Admin" type="com.demo.model.Admin" />
+		<typeAlias alias="LoginLog" type="com.demo.model.LoginLog" />
+		<typeAlias alias="Flink" type="com.demo.model.Flink" />
+		<typeAlias alias="Setting" type="com.demo.model.Setting" />
+		<typeAlias alias="PageSearch" type="com.demo.model.PageSearch" />
+	</typeAliases>
+</configuration>

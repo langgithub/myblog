@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.dao.FileDao">
+
+    <insert id="insertFile" parameterType="FileModel" useGeneratedKeys="true" keyProperty="id">
+     insert into file(title,content,keywords,file_desc,category_id,tags,date,is_public,click)
+     values(#{title},#{content},#{keywords},#{fileDesc},#{category.id},#{tags},#{date},#{isPublic},#{click}) 
+    </insert>
+    
+    
+    <!-- 
+                注意事项:做连接字段会重复，为了区分字段数据库是使用点打印，但是不能 as file.id,数据解析会报错
+                    因此在多对一，一对一使用连接查询必须将字段转换成 ” 类_属性“ 格式，可解决mybatis加载错误与数据库解析错误
+       <resultMap type="FileModel" id="admimFileResult">
+         <id property="id" column="file_id"/>
+         <result property="title" column="file_title"/>
+         <result property="tags" column="file_tags"/>
+         <result property="date" column="file_date"/>
+         <association property="category" javaType="Category"> 
+            <id property="id" column="category_id"/>
+            <result property="name" column="category_name"/>
+         </association>
+         <collection property="commentList" ofType="Comment">
+            <id property="id" column="comment_id"/>
+            <result property="comment" column="comment_comment"/>
+         </collection>
+       </resultMap>
+
+       <select id="queryFileList" resultMap="admimFileResult">
+          select f.id file_id,f.title file_title,f.tags file_tags,f.date file_date,
+          c.id category_id,c.name category_name,com.id comment_id,com.comment comment_comment
+          from category c right join (file f left join comment com on f.id=com.file_Id) 
+          on c.id=f.category_id 
+      </select>
+     -->
+    <resultMap type="FileModel" id="admimFileResult">
+         <id property="id" column="file_id"/>
+         <result property="title" column="file_title"/>
+         <result property="tags" column="file_tags"/>
+         <result property="date" column="file_date"/>
+         <result property="totalComment" column="comment_count"/>
+         <association property="category" javaType="Category"> 
+            <id property="id" column="category_id"/>
+            <result property="name" column="category_name"/>
+         </association>
+    </resultMap>
+
+    <select id="queryFileList" resultMap="admimFileResult">
+         select f.id file_id,f.title file_title,f.tags file_tags,f.date file_date,
+         c.id category_id,c.name category_name,(select count(*) as total from
+         comment com join file f on com.file_id=f.id) comment_count from category c 
+         right join file f on c.id=f.category_id
+    </select>
+    
+    <select id="totalRow"  resultType="int">
+       select count(*) from file
+    </select>
+    
+    <select id="queryFileListPage" parameterType="PageSearch" resultType="FileModel">
+       select * from file order by id asc limit #{firstRow},#{pageRow}
+    </select>
+    
+    
+    <resultMap type="FileModel" id="admimFileOneResult">
+         <id property="id" column="file_id"/>
+         <result property="title" column="file_title"/>
+         <result property="content" column="file_content"/>
+         <result property="keywords" column="file_keywords"/>
+         <result property="fileDesc" column="file_fileDesc"/>
+         <result property="tags" column="file_tages"/>
+         <result property="date" column="file_date"/>
+         <result property="isPublic" column="file_ispublic"/>
+         <association property="category" javaType="Category"> 
+           <id property="id" column="category_id"/>
+           <result property="name" column="category_name"/>
+         </association>
+    </resultMap>
+    <select id="queryFileOne" resultMap="admimFileOneResult" parameterType="int">
+       select f.id file_id,f.title file_title,f.content file_content,f.keywords 
+       file_keywords,f.file_desc file_fileDesc,tags file_tages,f.is_public file_ispublic,
+       f.date file_date, c.id category_id,c.name category_name from file f join 
+       category c on f.category_id = c.id where f.id=#{id}
+    </select>
+    
+    <update id="updateFile" parameterType="FileModel">
+       update file set title=#{title},content=#{content},keywords=#{keywords},
+       file_desc=#{fileDesc},category_id=#{category.id},tags=#{tags},
+       is_public=#{isPublic} where id=#{id}
+    </update>
+    
+    <delete id="deleteFileOne" parameterType="int">
+       delete from file where id=#{id}
+    </delete>
+</mapper>

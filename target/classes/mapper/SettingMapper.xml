@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.dao.SettingDao">
+
+   <select id="querySetting" resultType="Setting">
+      select id,title,fu_title fuTitle,url,keywords,setting_desc settingDesc,
+      email,icp,session_out sessionOut from setting;
+   </select>
+   
+   <update id="updateSetting" parameterType="Setting">
+      update setting set title=#{title},fu_title=#{fuTitle},
+      url=#{url},keywords=#{keywords},setting_desc=#{settingDesc},
+      email=#{email},icp=#{icp},session_out=#{sessionOut}  where id=#{id}
+   </update>
+
+</mapper>

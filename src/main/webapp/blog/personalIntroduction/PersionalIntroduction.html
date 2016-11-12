@@ -1,0 +1,959 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="浪">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>个人简介</title>
+  <style type="text/css">
+        /* Custom CSS
+		 * --------------------------------------- */
+         *{
+		    font-size:14px;
+			font-weight:600;
+			font-family:"Micorsoft yahei";
+			color:#c5c5c5;
+			list-style:none;
+			text-decoration:none;
+		 }
+		/* Section 1
+		 * --------------------------------------- */
+        *{margin:0;padding:0;}
+        html,body{height:100%;}
+        #container {
+		   width:100%;
+		   height:100%;
+		}
+		#container div{
+		   width:100%;
+		   height:100%;
+		   background-position:center;
+		   background-attachment:fixed;/*背景固定*/
+		}
+        /*导航栏0
+		 *--------------------------------------- */
+		#header{
+		    width:100%;
+			height:50px;
+			position:fixed;
+			background:#4b4b4b;
+			/*background-color:transparent;*/
+			opacity:0.5;
+			z-index:10;
+		}
+		#header .firstPage{
+		    float:left;
+			width:100px;
+			height:50px;
+			line-height:50px;
+			text-align:center;
+			margin-left:100px;
+			cursor:pointer;
+		}
+        #header  .header_menu{
+            float:right;
+			/*border:1px solid red;*/
+			margin-right:100px;
+            width:410px;
+			position:relative;
+		}
+		/*ul 不设置宽高*/
+		#header  .header_menu .circle{
+		   width:80px;
+		   height:50px;
+		   border-bottom:2px solid #0099ff;
+		   position:absolute;
+		   top:0px;
+		   left:0px;
+		   z-index:-1;
+		   display:none;
+		}
+		#header  .header_menu ul li{
+		    float:left;
+			width:80px;
+			height:50px;
+			text-align:center;
+			line-height:50px;
+			cursor:pointer;
+		}
+	    #header  .header_menu ul li.active{
+		   	background:#7f7f7f;
+		}
+		#header  .header_menu ul li a{
+            text-shadow:5px 1px 1px #838383;
+		}
+
+		/* 垂直导航栏
+		 * --------------------------------------- */
+        #Vheader {
+		    width:30px;
+			height:150px;
+			position:fixed;
+			bottom:60px;
+			right:60px;
+			z-index:999;
+		}
+
+		 #Vheader ul li{
+		    width:20px;
+			height:20px;
+			margin-bottom:8px;
+			border-radius:50%;
+			opacity:0.6;
+			position:relative;
+			cursor:pointer;
+		 }
+		 #Vheader ul li.active{
+		    background-color:#7d7d7d;
+		 }
+
+		  #Vheader ul li a{
+		    width:10px;
+			height:10px;
+			background-color:#8F9DA4;
+			border-radius:50%;
+			position:absolute;
+			left:5px;
+			top:5px;
+
+		  }
+
+		 #Vheader ul li div.send{
+		    width:60px;
+			height:25px;
+			position:absolute;
+			top:-5px;
+			left:-85px;
+			background:#F8C301;
+			border-radius:5px; /* 圆角 */
+			color:#fafafa;
+			line-height:25px;
+			text-align:center;
+			font-size:10px;
+			opacity:0;
+		 }
+
+		 #Vheader ul li .send .arrow {
+			position:absolute;
+			top:5px;
+			right:-16px; /* 圆角的位置需要细心调试哦 */
+			width:0;
+			height:0;
+			font-size:0;
+			border:solid 8px;
+			border-color:rgba(77,73,72,0) rgba(77,73,72,0) rgba(77,73,72,0) #F8C301;
+		}
+
+
+		/*主页  start*/
+		#container .first{
+		    background-size:cover;
+			position:relative;
+		}
+		#container .first_con{
+		    width:600px;
+			height:200px;
+			position:absolute;
+			left:30%;
+			top:30%;
+		}
+
+		#container  .next{
+            height:100px;
+			width:100px;
+			border-radius:50%;
+			border:1px solid gray;
+			position:absolute;
+			left:46%;
+			bottom:20%;
+			overflow:hidden;
+			cursor:pointer;
+			
+		}
+		#container  .next:hover{
+		    background:gray;
+			opacity:0.3;	
+		}
+		#container  .next:hover span{
+		    color:white;
+		}
+		#container .next span{
+		  
+			width:60px;
+			display:inline-block;
+			font-size:30px;
+		    line-height:30px;
+			animation:nextxunhuan 2s linear infinite;
+			text-align:center;
+			position:absolute;
+			left:18px;top:30px;
+		}
+      
+        @-webkit-keyframes nextxunhuan{
+             0%{-webkit-transform:translateY(-50px);}
+			 100%{-webkit-transform:translateY(50px);}
+		}
+		#container .first_con p.title{
+		    line-height:50px;
+			text-align:center;
+            font-size: 50px;
+            font-weight: 700;
+            color: #0A9676;
+            text-shadow: 5px -2px 8px #151414;
+		}
+		#container .first_con p.title span{
+		    line-height:50px;
+            font-size: 50px;
+            font-weight: 700;
+		    color: #B6BF31;
+            text-shadow: 9px -2px 15px #000;
+		}
+		#container .first_con p.detail{
+		    line-height:35px;
+			font-size:30px;
+			text-align:center;
+			font-weight: 700;
+		}
+		#container .first img:nth-child(1){
+		    position:absolute;
+			left:120px;
+			top:80px;
+		}
+		#container .first img:nth-child(3){
+		    position:absolute;
+			right:120px;
+			top:80px;
+		}
+		#container .first img:nth-child(2){
+		    position:absolute;
+			left:120px;
+			bottom:80px;
+		}
+		#container .first img:nth-child(4){
+		    position:absolute;
+			right:120px;
+			bottom:80px;
+		}
+		#container .first img:nth-child(1).xuanzhuan{
+		
+			animation:xuanzhuan1 1.5s linear;
+		}
+        @-webkit-keyframes xuanzhuan1{
+             0%{-webkit-transform:rotate(-90deg);}
+			 20%{-webkit-transform:rotate(-70deg);}
+			 40%{-webkit-transform:rotate(-50deg);}
+			 60%{-webkit-transform:rotate(-30deg);}
+			 80%{-webkit-transform:rotate(-10deg);}
+			 100%{-webkit-transform:rotate(0deg);}
+		}
+		#container .first img:nth-child(2).xuanzhuan{
+		   
+			animation:xuanzhuan2 1.5s linear;
+		}
+        @-webkit-keyframes xuanzhuan2{
+             0%{-webkit-transform:rotate(90deg);}
+			 20%{-webkit-transform:rotate(70deg);}
+			 40%{-webkit-transform:rotate(50deg);}
+			 60%{-webkit-transform:rotate(30deg);}
+			 80%{-webkit-transform:rotate(10deg);}
+			 100%{-webkit-transform:rotate(0deg);}
+		}
+
+		#container .first img:nth-child(3).xuanzhuan{
+			animation:xuanzhuan3 1.5s linear;
+		}
+        @-webkit-keyframes xuanzhuan3{
+             0%{-webkit-transform:rotate(90deg);}
+			 20%{-webkit-transform:rotate(70deg);}
+			 40%{-webkit-transform:rotate(50deg);}
+			 60%{-webkit-transform:rotate(30deg);}
+			 80%{-webkit-transform:rotate(10deg);}
+			 100%{-webkit-transform:rotate(0deg);}
+		}
+
+	    #container .first img:nth-child(4).xuanzhuan{
+			animation:xuanzhuan4 1.5s linear;
+		}
+        @-webkit-keyframes xuanzhuan4{
+             0%{-webkit-transform:rotate(-90deg);}
+			 20%{-webkit-transform:rotate(-70deg);}
+			 40%{-webkit-transform:rotate(-50deg);}
+			 60%{-webkit-transform:rotate(-30deg);}
+			 80%{-webkit-transform:rotate(-10deg);}
+			 100%{-webkit-transform:rotate(0deg);}
+		}
+
+
+
+        #container .base{
+		    position:relative;
+		}
+		#container .base .nav{
+		    position:absolute;
+			top:25%;
+			left:50%;
+			margin-left:-500px;
+		    width:1000px;
+			height:350px;
+		}
+		#container .base .nav .zl_base{
+		    position:absolute;
+			top:0px;
+			width:300px;
+			height:100px;
+			left:50%;
+			margin-left:-150px;
+			text-align: center;
+            font: 50px "Microsoft Yahei";
+            color: #fff;
+			line-height:100px;
+		}
+
+
+		#container .base .nav ul{
+            margin-top:115px;
+		}
+		#container .base .nav ul li{
+			height:230px;
+			width:248px;
+			background:#ff9900;
+			float:left;
+			position:relative;
+		}
+
+        #container .base .nav ul li:nth-child(1){
+		    background:url("images/glass.png")no-repeat 40px -10px;
+		}
+	    #container .base .nav ul li:nth-child(2){
+		    background:url("images/hat.png")no-repeat 32px -5px;
+		}
+	    #container .base .nav ul li:nth-child(3){
+		    background:url("images/book.png")no-repeat 40px -0px;
+		}	  
+		#container .base .nav ul li:nth-child(4){
+		    background:url("images/tel.png")no-repeat 80px -10px;
+		}
+
+		#container .base .nav .animate_active{
+		   animation:titlemove 3s linear;
+		}
+
+        #container .base .nav ul li:nth-child(1).animate_active{
+		   animation:glassScale 1.3s linear;
+		   animation-delay: 1s;
+		}
+		#container .base .nav ul li:nth-child(2).animate_active{
+		   animation:hatskew 2s linear;
+		   animation-delay: 1.3s;
+		}
+		#container .base .nav ul li:nth-child(3).animate_active{
+		   animation:bookscale 2.1s linear;
+		   animation-delay: 2s;
+		}
+		#container .base .nav ul li:nth-child(4).animate_active{
+		   animation:telmove 3s linear;
+		   animation-delay: 2.2s;
+		}
+	    @-webkit-keyframes titlemove{
+	       0%{-webkit-transform:scale(0);-webkit-transform:translate(200px,-150px);opacity:0; }
+		   90%{-webkit-transform:scale(0);-webkit-transform:translate(200px,-150px);opacity:0;}
+
+		   90.01%{-webkit-transform:translateY(-160px);-webkit-transform:scale(0.5);opacity:0.5;}
+		   95%{-webkit-transform:translateY(-100px);}
+		   95%{-webkit-transform:translateY(-500px);}
+		   100%{-webkit-transform:translateY(0px);-webkit-transform:scale(1.0);opacity:1;}
+		}
+
+        @-webkit-keyframes glassScale{
+	       0%{-webkit-transform:scale(0);}
+		   20%{-webkit-transform:scale(1.2);}	
+		   40%{-webkit-transform:scale(0.8);}
+		   60%{-webkit-transform:scale(1.1);}
+		   80%{-webkit-transform:scale(0.9);}
+		   100%{-webkit-transform:scale(1);}
+	    }
+	    @-webkit-keyframes hatskew{
+	       0%{-webkit-transform:translateX(100px);}
+		   30%{-webkit-transform:skewX(10deg);}
+		   60%{-webkit-transform:skewX(0deg);}
+		   90%{-webkit-transform:skewX(-10deg);}
+		   100%{-webkit-transform:skewX(0deg);}
+	    }
+		@-webkit-keyframes bookscale{
+	       0%{-webkit-transform:scale(0);}
+		   20%{-webkit-transform:scale(1.2,0.8);}	
+		   40%{-webkit-transform:scale(0.8,1.2);}
+           60%{-webkit-transform:scale(1.1,0.9);}
+		   80%{-webkit-transform:scale(0.9,1.1);}
+		   100%{-webkit-transform:scale(1);}
+	    }
+	   @-webkit-keyframes telmove{
+	       0%{-webkit-transform:translateY(50px);}
+		   20%{-webkit-transform:translateY(0px);}	
+		   40%{-webkit-transform:translateY(-20px);}
+		   60%{-webkit-transform:translateY(0px);}
+		   80%{-webkit-transform:translateY(10px);}
+		   100%{-webkit-transform:translateY(0px);}
+		}
+
+
+		#container .base .nav ul li div{
+			position:absolute;
+			width:100%;
+			height:50%;
+			top:117px;
+		}
+		#container .base .nav ul li div h4{
+			font-size: 18px;
+			text-align:center;
+			line-height:60px;
+			height:60px;
+		}
+		#container .base .nav ul li div p{
+		    text-align:center;
+			font-size:12px;
+		}
+	    /*主页  end*/
+		#container .technology{
+		    position:relative;
+		}
+        #container .technology .desc{
+		    width:75%;
+			height:50%;
+			position:absolute;
+			top:20%;left:10%;
+		}
+
+
+
+		#container .technology .desc .firstimg{
+		    width:100%;
+			height:120px;
+		}
+
+		#container .technology .desc .firstimg img{
+		    width:4%;
+			height:40px;
+			position:absolute;
+		}
+
+        
+		#container .technology .desc .seconed{
+		    width:100%;
+			height:150px;
+		}
+
+		#container .technology .desc .seconed img{
+		    width:4%;
+			height:40px;
+			position:absolute;
+		}
+
+		#container .technology .desc .third{
+		    width:100%;
+			height:100px;
+		}
+		#container .technology .desc .third img{
+		    width:4%;
+			height:40px;
+			position:absolute;
+		}
+
+		#container .technology .desc div .content{
+		    width:95%;
+			height:33%;
+			left:5%;
+			position:absolute;
+		}
+		#container .technology .desc div .content .title{
+		    width:100%;
+			height:40px;
+			font-size:25px;
+		}
+		#container .technology .desc div .content .body{
+		    width:100%;
+			height:80px;
+			font-size:20px;
+		}
+        #container .technology .desc .firstimg.Technology_active{
+		    animation:technology_first 2s linear;
+		    animation-delay: 0.75s;
+			
+		}
+		#container .technology .desc .seconed.Technology_active{
+		    animation:technology_seconed 2.75s linear;
+		}
+		#container .technology .desc .third.Technology_active{
+		    animation:technology_third 3.5s linear;
+			
+		}
+	    @-webkit-keyframes technology_first{
+	       0%{-webkit-transform:translateX(-200px);}
+		   25%{-webkit-transform:translateX(20px);}
+		   50%{-webkit-transform:translateX(-10px);}
+		   75%{-webkit-transform:translateX(10px);}
+		   100%{-webkit-transform:translateX(0px);}
+		}
+
+	    @-webkit-keyframes technology_seconed{
+	       0%{-webkit-transform:translateX(200px);opacity:0}
+		   80%{-webkit-transform:translateX(200px);opacity:0}
+		   85%{-webkit-transform:translateX(-15px);}
+		   90%{-webkit-transform:translateX(10px);}
+		   95%{-webkit-transform:translateX(-8px);}
+		   100%{-webkit-transform:translateX(0px);}
+		}
+	  @-webkit-keyframes technology_third{
+	       0%{-webkit-transform:translateY(-400px);opacity:0}
+		   80%{-webkit-transform:translateY(-400px);opacity:0}
+		   85%{-webkit-transform:translateY(20px);}
+		   90%{-webkit-transform:translateY(-10px);}
+		   95%{-webkit-transform:translateY(5px);}
+		   100%{-webkit-transform:translateY(0px);}
+		}
+
+       #container .technology .computer .zhe{
+	       width:480px;
+		   height:350px;
+		   opacity:0.5;
+	   }
+
+       #container .technology .computer .zhe img.i1{
+	       position:absolute;
+		   right:150px;
+		   bottom:10px;
+	   }
+	   #container .technology .computer img.i2{
+	       position:absolute;
+		   right:300px;
+		   bottom:180px;
+	   }
+
+	   @-webkit-keyframes technology_cup1{
+	       0%{-webkit-transform:translateY(100px);}
+		   100%{-webkit-transform:translateY(0px);}
+		}
+
+	  @-webkit-keyframes technology_cup2{
+           0%{opacity:0;}
+	       80%{-webkit-transform:translate(100px,50px);}
+           85%{opacity:0;}
+		   100%{-webkit-transform:translateY(0px);opacity:1;}
+		}
+
+	  #container .technology .computer .zhe .technology_cpu {
+            animation:technology_cup1 1s linear;
+		    animation-delay: 0.5s;
+	   }
+
+	  #container .technology .computer .technology_cpu{
+		    animation:technology_cup2 3s linear;
+	   }
+	  #container .last{
+	       position:relative;
+	  }
+
+	  #container .last .con{
+	       position:absolute;
+		   width:100%;
+		   height:200px;
+		   background-color:green;
+		   top:30%;
+		   background:url("images/pure.jpg")no-repeat 0px -350px;
+		   background-size:cover;
+		   padding-top:50px;
+	  }
+
+	  #container .last .con p{
+	       line-height:30px;
+		   font-size:25px;
+		   text-align:center;
+	  }
+	  #container .last .con p.title{
+	       line-height:50px;
+		   font-size:35px;
+	  }
+	  #container .last .lastactive{
+	        animation:mylast 1.5s linear;
+	  }
+	  @-webkit-keyframes mylast{
+	       0%{-webkit-transform:scale(1,0);}
+		   90%{-webkit-transform:scale(1,0.0001);}
+		   100%{-webkit-transform:scale(1);}
+	  }
+
+  </style>
+ </head>
+ <body style="overflow:-Scroll;overflow-y:hidden" >
+      <!-- 导航横向 start-->
+	  <div id="header">
+		<div class="firstPage"><a  href="#page1">首页</a></div>
+		<div class="header_menu">
+			<ul>
+			   <li><a href="#page2">基本资料</a></li>
+			   <li><a href="#page3">技能</a></li>
+			   <li><a href="#page4">履历</a></li>
+			   <li><a href="#page5">Blog</a></li>
+			   <li><a href="#page6">自我评价</a></li>
+			</ul>
+			<div class="circle"></div>
+		</div>
+	  </div>
+	
+	  <!-- 导航横向 end-->
+      <div id="Vheader">
+	     <ul>
+		 	<li class="active">
+			   <a href="#page1"></a>
+			   <div class="send">
+			      首页
+                  <div class="arrow"></div>
+               </div>
+			</li>
+		    <li >
+			   <a href="#page2"></a>
+			   <div class="send">
+			      基本资料
+                  <div class="arrow"></div>
+               </div>
+			</li>
+			<li>
+			   <a href="#page3"></a>
+			   <div class="send">
+			      技能
+                  <div class="arrow"></div>
+               </div>
+			</li>
+			<li>
+			   <a href="#page4"></a>
+			   <div class="send">
+			       履历
+                  <div class="arrow"></div>
+               </div>
+			</li>
+			<li>
+			   <a href="#page5"></a>
+			   <div class="send">
+			      Blog
+                  <div class="arrow"></div>
+               </div>
+			</li>
+			<li>
+			   <a href="#page6"></a>
+			   <div class="send">
+                  自我评价
+                  <div class="arrow"></div>
+               </div>
+			</li>
+		 </ul>
+	  </div>
+	  <!-- 纵向导航 start-->
+
+	  <!-- 纵向导航 end-->
+
+	  <!--  内容部分-->
+      <div id="container">
+	     <div style="background:url(images/bg7.jpg)no-repeat; background-size:cover;" class="first">
+		    <img src="images/1.png" class="f1">
+			<img src="images/2.png" class="f2">
+			<img src="images/3.png" class="f3">
+			<img src="images/4.png" class="f4">
+		    <div class="first_con">
+			   <p class="title">java工程师<span>简历</span></p>
+			   <p class="detail">爱技术、爱生活</p>
+			</div>
+			<div class="next"> 
+			   <span>next</span>
+			</div>
+		 </div>
+
+		 <!--基础知识 start-->
+		 <div style="background-image:url(images/base.jpg);background-size:cover;" class="base">
+		     <div class="nav">
+			     <div class="zl_base">基本资料</div>
+			     <ul>
+				   <li class="s_base" >
+				      <div>
+					     <h4>资本资料</h4>
+						 <p>姓名：某某 男 <br>年龄：22岁 籍贯：泸州</p>
+					  </div>
+				   </li>
+				   <li class="s_hat">
+				      <div  >
+					     <h4>毕业学校</h4>
+						 <p>四川文理学院</p>
+					  </div>
+				   </li>
+				   <li class="s_book">
+				      <div  >
+					     <h4>学历与专业</h4>
+						 <p>计算机科学与技术 本科<br> 专业技能 编程</p>
+					  </div>
+				   </li>
+				   <li class="s_tel" >
+				      <div >
+					     <h4>联系方式</h4>
+						 <p>mail:1146941596@.com <br>tel:1577569----</p>
+					  </div>
+				   </li>
+				 </ul>
+			 </div>
+		 </div>
+		  <!--基础知识 end-->
+		 <div style="background-image:url(images/3.jpg);" class="technology">
+		     <div class="desc">
+			     <div class="firstimg">
+				     <img src="images/tv8.png"/>
+				     <div class="content">
+					    <div class="title">pc端</div>
+						<div class="body">
+						    思路清晰，结构完整，易于维护和持久化开发，能处理主流浏览器兼容问题。
+                            熟练使用原生js, 了解js面向对象原理，闭包以及原型结构，能够合理利用面向对象以及模块化开发,并且能适当完成框架封装。熟练使用 jQuery，并能完成相关项目。
+						</div>
+					 </div>
+				 </div>
+				 <div class="seconed">
+				     <img src="images/apple6.png"/>
+				     <div class="content">
+					    <div class="title">pc端</div>
+						<div class="body">
+						    思路清晰，结构完整，易于维护和持久化开发，能处理主流浏览器<br>
+							兼容问题。熟练使用原生js, 了解js面向对象原理，闭包以及原型<br>
+							结构，能够合理利用面向对象以及模块化开发,并且能适当完成框<br>
+							架封装。熟练使用 jQuery，并能完成相关项目。
+						</div>
+					 </div>
+				 </div>
+				 <div class="third">
+				     <img src="images/baterry10.png"/>
+				     <div class="content">
+					    <div class="title">pc端</div>
+						<div class="body">
+						   	思路清晰，结构完整，易于维护和持久化开发，能处理主流浏览器<br>
+							兼容问题。熟练使用原生js, 了解js面向对象原理，闭包以及原型<br>
+							结构，能够合理利用面向对象以及模块化开发,并且能适当完成框<br>
+							架封装。熟练使用 jQuery，并能完成相关项目。
+						</div>
+					 </div>
+				 </div>
+			 </div>
+
+			 <div class="computer">
+			     <div class="zhe">
+				    <img src="images/1(4).png" class="i1" width="500" height="350"/>
+				 </div>
+			     <img src="images/2(3).png" class="i2" width="300" height="230"/>
+			 </div>
+		 </div>
+		 <div style="background-image:url(images/4.jpg);"></div>
+		 <div style="background-image:url(images/1.jpg);"></div>
+		 <div style="background:#16BA9D;">
+		    <div class="last">
+			   <div class="con">
+			      <p class="title">focus me</p>
+				  <p>有责任，工作踏实，性格开朗乐观，积极上进。</p>
+				  <p>易和人相处，拥有良好的亲和力。</p>
+				  <p>喜欢java，js，非常热爱编程，喜欢钻研新的技术，</p>
+				  <p>具有很强的自学能力和良好的学习方法，喜欢研究各种新的技术。 </p>
+			   </div>
+
+
+			</div>
+		 </div>
+		 
+	  </div>
+
+	  <script src="js/jquery.js"></script>
+	  <script src="js/jquery.mousewheel.js"></script>
+	  <script>
+	      function config(){
+			  this.H_header=$("#header");
+			  this.H_header_a=$("#header a");
+		      this.H_header_circle= $("#header  .header_menu .circle");
+			  this.H_header_ulli=$("#header  .header_menu ul li");
+              this.V_header_ulli= $("#Vheader ul li");
+			  this.C1_base_ulli=$("#container .base .nav ul li");
+			  this.Cl_base_title=$("#container .base .nav .zl_base");
+			  this.technology_first=$("#container .technology .desc .firstimg");
+			  this.technology_seconed=$("#container .technology .desc .seconed");
+			  this.technology_third=$("#container .technology .desc .third");
+			  this.technology_cpu1=$("#container .technology .computer .zhe .i1");
+			  this.technology_cpu2=$("#container .technology .computer .i2");
+			  this.first_img=$("#container .first img");
+			  this.last_con=$("#container .last .con");
+			  this.index=0;//第几屏 下标
+
+		  }
+		  /*整屏滚动函数*/
+		  function bgWheel(_common){
+			//  console.log(_common.index);
+			 if(_common.index==0){
+			    _common.first_img.addClass("xuanzhuan");
+			 }else{
+			    _common.first_img.removeClass("xuanzhuan");
+			 }
+			 if(_common.index==1){
+				 _common.Cl_base_title.addClass("animate_active");
+			    _common.C1_base_ulli.eq(0).addClass("animate_active");
+				_common.C1_base_ulli.eq(1).addClass("animate_active");
+				_common.C1_base_ulli.eq(2).addClass("animate_active");
+				_common.C1_base_ulli.eq(3).addClass("animate_active");
+			 }else{
+			   _common.Cl_base_title.removeClass("animate_active");
+			   _common.C1_base_ulli.eq(0).removeClass("animate_active");
+			   _common.C1_base_ulli.eq(1).removeClass("animate_active");
+			   _common.C1_base_ulli.eq(2).removeClass("animate_active");
+			   _common.C1_base_ulli.eq(3).removeClass("animate_active");
+			 }
+
+			 if(_common.index==2){
+			    _common.technology_first.addClass("Technology_active");
+			    _common.technology_seconed.addClass("Technology_active");
+			    _common.technology_third.addClass("Technology_active");
+                _common.technology_cpu1.addClass("technology_cpu");
+			    _common.technology_cpu2.addClass("technology_cpu");
+
+			 }else{
+			 	_common.technology_first.removeClass("Technology_active");
+			    _common.technology_seconed.removeClass("Technology_active");
+			    _common.technology_third.removeClass("Technology_active");
+				 _common.technology_cpu1.removeClass("technology_cpu");
+				 _common.technology_cpu2.removeClass("technology_cpu");
+			 }
+
+
+             if(_common.index==5){
+				 console.log("ggg");
+				 	/*background-color:transparent;*/
+                 _common.H_header.css("background","transparent");
+				 _common.H_header_a.css("color","#fcfcfc");
+				 _common.last_con.addClass("lastactive");
+			 }else{
+			     _common.last_con.removeClass("lastactive");
+			 }
+			 var wWidthHeight=$(window).height();
+			 $("html,body").stop().animate({
+				'scrollTop':_common.index*wWidthHeight+"px",
+			 },1000);
+		  }
+		  /*根据下标 更改样式*/
+          function eqCss(arg,index){
+		      arg.eq(index).addClass("active").siblings().removeClass("active");
+		  }
+
+		  /*直接 更改样式*/
+		  function Css(obj){
+		       obj.addClass("active").siblings().removeClass("active");
+		  }
+		  /*水平导航样式*/
+		  function _HeaderCss(_common){
+		     if(_common.index==0){
+				_common.H_header_ulli.removeClass("active");
+				_common.H_header_circle.css({'display':'none',});
+			 }else{
+				eqCss(_common.H_header_ulli,_common.index-1);
+				var width=_common.H_header_ulli.width();
+				_common.H_header_circle.css({'display':'block',});
+				_common.H_header_circle.css({'left':width*(_common.index-1)+'px',});
+			 }
+		  }
+
+	      $(function(){
+              var _common=new config();
+
+			  var time=new Date();
+			  $(document).scrollTop(0);//出事屏幕
+              bgWheel(_common);
+			 
+			  $("#header .firstPage").click(function(){
+				 _common.index=0;
+                 _common.H_header_circle.css({'display':'none',});
+				 _common.H_header_ulli.removeClass("active");
+				 eqCss(_common.V_header_ulli,0);
+				 bgWheel(_common);
+			  });
+
+			  //header导航 hover动画
+		      _common.H_header_ulli.hover(function(){
+			     var l=$(this).position().left;
+                 _common.H_header_circle.stop().animate({
+				     'left':l+'px',
+				 },200);
+			   },function(){
+				 var width=$(this).width();
+				 _common.index=(_common.index==0)?(_common.index+1):_common.index;
+			     _common.H_header_circle.stop().animate({
+				     'left':width*(_common.index-1)+'px',
+				 },100);
+			  });
+               //header导航 点击事件
+			  _common.H_header_ulli.click(function(){
+				 _common.H_header_circle.css({'display':'block',});
+				 _common.index=$(this).index()+1;
+				 Css($(this));
+				 eqCss(_common.V_header_ulli,_common.index);
+				 bgWheel(_common);
+			  });
+
+              //垂直导航 hover动画
+			  _common.V_header_ulli.hover(function(){
+                 $(this).find("div.send").stop().animate({
+				     'left':'-72px',
+                     "opacity":"1",
+				 },500)
+			  },function(){
+			     $(this).find("div.send").stop().animate({
+				     'left':'-85px',
+                     "opacity":"0",
+				 },500)
+			  
+			  });
+
+             //垂直导航 点击事件
+              _common.V_header_ulli.click(function(){
+				Css($(this));
+			    _common.index=$(this).index();
+				bgWheel(_common);
+				_HeaderCss(_common);
+			  });
+
+              //浏览器缩放事件
+			  $(window).resize(function(){
+			     var wHeight=$(window).height();
+                 var wWigth=$(window).width();
+				 $("html,body").scrollTop(wHeight*_common.index);
+				 //console.log(wHeight,wWigth);
+			     if(wHeight<720){ 
+                      window.resizeTo(document.body.clientHeight,720); 
+					  return;
+                 } 
+				 if(wWigth<400){
+				      window.resizeTo(document.body.clientHeight,400); 
+					  return;
+				 }
+			  });
+              //鼠标滚动事件
+			  $(document).mousewheel(function(ev,dt,dx){
+				 var currentTime=new Date();
+				 if(currentTime-time>1000){
+					 time=currentTime;
+				     var dt=arguments[1];
+					 //alert(dt);
+					 if(dt<0){
+						_common.index=_common.index>=5?0:(_common.index+1);
+					 }else{
+						_common.index=_common.index<=0?5:(_common.index-1);
+					 }
+					 bgWheel(_common);
+					 _HeaderCss(_common);
+					 eqCss(_common.V_header_ulli,_common.index);
+				 }
+
+			  });
+
+		  });
+	  </script>
+ </body>
+</html>
